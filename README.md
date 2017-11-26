@@ -1,13 +1,15 @@
 # react-scripts-ts-ce
 
-Create React App Scripts for TypeScript powered Chrome Extensions
+Create React App Scripts for TypeScript and React powered Chrome Extensions
+
+Createa  a chrome extension using create-react-app with:
+
+``` bash
+$ create-react-app my-ts-chrome-extension --scripts-version=@baristalabs/react-scripts-ts-ce
+```
 
 This package includes scripts and configuration used by [Create React App](https://github.com/facebookincubator/create-react-app).<br>
 Please refer to its documentation:
-
-``` bash
-$ create-react-app my-ts-app --scripts-version=@baristalabs/react-scripts-ts-ce
-```
 
 Additional Resources
 ---(https://github.com/facebookincubator/create-react-app/blob/master/README.md#getting-started) – How to create a new app.
