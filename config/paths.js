@@ -78,6 +78,7 @@ module.exports = {
   appIndexJs: resolveApp('src/index.tsx'),
   backgroundJs: resolveApp('src/background.ts'),
   backgroundWorkerJs: resolveApp('src/backgroundWorker.ts'),
+  optionsHtml: resolveApp('public/options.html'),
   optionsJs: resolveApp('src/options.ts'),
   popupHtml: resolveApp('public/popup.html'),
   popupJs: resolveApp('src/popup.ts'),
