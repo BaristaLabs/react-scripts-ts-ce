@@ -281,6 +281,11 @@ module.exports = {
       template: paths.appHtml,
       chunks: ['runtime', 'vendor', 'main']
     }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: paths.trampolineHtml,
+      chunks: ['trampoline']
+    }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
     // Makes some environment variables available to the JS code, for example:
