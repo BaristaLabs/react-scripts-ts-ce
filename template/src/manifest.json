@@ -11,6 +11,10 @@
     "scripts": ["static/js/background.js"],
     "persistent": true
   },
+  "web_accessible_resources": [
+    "trampoline.html",
+    "static/js/trampoline.js"
+  ],
   "browser_action": {
     "default_icon": {
       "512": "favicon.png",
@@ -19,7 +23,7 @@
       "32": "favicon.png",
       "16": "favicon.png"
     },
-    "default_title": "React App"
+    "default_title": "React Chrome Extension"
   },
   "permissions": [
     "activeTab",

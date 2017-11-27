@@ -13,6 +13,7 @@ const paths = require('./paths');
 const {
   CheckerPlugin
 } = require('awesome-typescript-loader');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const WriteFilePlugin = require("write-file-webpack-plugin");
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -320,6 +321,9 @@ module.exports = {
       name: 'vendor',
       chunks: ['vendor', 'main']
     }),
+    new CopyWebpackPlugin([{
+      from: "src/manifest.json"
+    }]),
     //Write fields to the build folder during dev.
     new WriteFilePlugin()
   ],

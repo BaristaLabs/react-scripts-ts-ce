@@ -1,10 +1,10 @@
 // Inspect with chrome://inspect/#workers
 
 const ports = [];
-console.log("Hello there, is this existence?");
+console.log('Hello there, is this existence?');
 
 onconnect = function (event) {
-    console.log("Oh dear, something connected.");
+    console.log('Oh dear, something connected.');
     let port = event.ports[0];
     ports.push(port);
 
