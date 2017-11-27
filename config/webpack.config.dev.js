@@ -40,6 +40,8 @@ module.exports = {
     runtime: [require.resolve('./polyfills')],
     background: [paths.backgroundJs],
     backgroundWorker: [paths.backgroundWorkerJs],
+    options: [paths.optionsJs],
+    popup: [paths.popupJs],
     content: [paths.contentJs],
     trampoline: [paths.trampolineJs],
     vendor: ['react', 'react-dom', paths.appVendorJs],
@@ -282,6 +284,18 @@ module.exports = {
       template: paths.appHtml,
       filename: 'index.html',
       chunks: ['runtime', 'vendor', 'main']
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: paths.optionsHtml,
+      filename: 'options.html',
+      chunks: ['options']
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: paths.popupHtml,
+      filename: 'popup.html',
+      chunks: ['popup']
     }),
     new HtmlWebpackPlugin({
       inject: true,

@@ -9,16 +9,15 @@ worker.port.onmessageerror = (event) => {
     console.log('uhoh');
 };
 
-console.dir(worker);
-
 chrome.browserAction.onClicked.addListener((tab) => {
     
-    chrome.tabs.create({ 'url': chrome.extension.getURL(`index.html`), 'selected': true }, () => {
+    chrome.tabs.executeScript(tab.id, {file: `static/js/content.js`}, (response) => {
+        // Send a message when a tab is opened.
+        worker.port.postMessage('New Tab');
+    });
 
-        chrome.tabs.executeScript(tab.id, {file: `static/js/content.js`}, (response) => {
-            // Send a message when a tab is opened.
-            worker.port.postMessage('New Tab');
-        });
+    chrome.tabs.create({ 'url': chrome.extension.getURL(`index.html`), 'selected': true }, () => {
+        // Add some behavior    
     });
 
 });
