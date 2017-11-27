@@ -279,11 +279,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+      filename: 'index.html',
       chunks: ['runtime', 'vendor', 'main']
     }),
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.trampolineHtml,
+      filename: 'trampoline.html',
       chunks: ['trampoline']
     }),
     // Add module names to factory functions so they appear in browser profiler.

@@ -8,10 +8,8 @@ onconnect = function (event) {
     let port = event.ports[0];
     ports.push(port);
 
-    console.dir(event.ports);
-
     port.addEventListener('message', (e) => {
-        console.log('This is quite horrendious, someone (or something) posted a message!');
+        console.log('This is quite horrendous, someone (or something) posted a message!');
         console.log(`it said: "${e.data}"!`);
         for (let i = 0; i < ports.length; i++) {
             if (ports[i] !== port) {

@@ -307,6 +307,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+      filename: 'index.html',
       chunks: ['runtime', 'vendor', 'main'],
       minify: {
         removeComments: true,
@@ -324,6 +325,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.trampolineHtml,
+      filename: 'trampoline.html',
       chunks: ['trampoline'],
       minify: {
         removeComments: true,
