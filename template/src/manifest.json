@@ -12,7 +12,8 @@
     "persistent": true
   },
   "web_accessible_resources": [
-    "trampoline.html"
+    "trampoline.html",
+    "static/js/trampoline.js"
   ],
   "browser_action": {
     "default_icon": {
