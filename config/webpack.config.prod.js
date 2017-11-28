@@ -4,6 +4,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
@@ -366,6 +367,7 @@ module.exports = {
       template: paths.trampolineHtml,
       filename: 'trampoline.html',
       chunks: ['trampoline'],
+      inlineSource: '.js$',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -379,6 +381,7 @@ module.exports = {
         minifyURLs: true,
       },
     }),
+    new HtmlWebpackInlineSourcePlugin(),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
